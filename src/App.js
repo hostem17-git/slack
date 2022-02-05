@@ -7,6 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Header from './components/Header';
 
 
 function App() {
@@ -20,8 +21,8 @@ function App() {
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/home" exact>
-              <h1>This is home</h1>
+            <Route path="/" exact>
+              <Header />
             </Route>
           </Switch>
         </div>
