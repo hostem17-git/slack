@@ -1,11 +1,12 @@
 import { Button } from '@mui/material';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import { db } from "../firebase"
 import firebase from 'firebase';
+import { ChatRounded } from '@mui/icons-material';
 
-function ChatInput({ channelName, channelId }) {
+function ChatInput({ chatRef, channelName, channelId }) {
 
     const [input, setInput] = useState("");
     const sendMessage = (e) => {
@@ -21,9 +22,15 @@ function ChatInput({ channelName, channelId }) {
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             user: "Vinayak",
             userImage: "",
-        })
+        });
+
+
+        chatRef.current.scrollIntoView({
+            behavior: "smooth"
+        });
 
         setInput("");
+
     }
 
     return <ChatInputContainer>
