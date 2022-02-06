@@ -46,13 +46,15 @@ function Sidebar() {
             <hr />
             <SidebarOptions Icon={ExpandMoreIcon} Title="Channels" />
             <hr />
+            {channels?.docs.map(doc => (
+                <SidebarOptions key={doc.id} id={doc.id} Title={doc.data().name} />
+            ))}
+
             <SidebarOptions Icon={AddIcon} addChannelOption Title="Add Channel" />
 
 
 
-            {channels?.docs.map(doc => (
-                <SidebarOptions key={doc.id} id={doc.id} Title={doc.data().name} />
-            ))}
+
 
 
         </SidebarContainer>

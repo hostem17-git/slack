@@ -76,7 +76,7 @@ const HeaderSearch = styled.div`
         background-color:transparent;
         outline:none;
         border:none;
-        text-align:center;
+        text-align:left;
         min-width:90%;
     }
     
