@@ -6,7 +6,7 @@ import styled from 'styled-components';
 function Message({ message, user, timestamp, userImage }) {
 
     return <MessageContainer>
-        <Avatar />
+        <Avatar src={userImage} alt={user} />
 
         <MessageInfo>
             <h4>{user}

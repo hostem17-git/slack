@@ -2,11 +2,12 @@ import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-import { db } from "../firebase"
+import { auth, db } from "../firebase"
 import firebase from 'firebase';
-import { ChatRounded } from '@mui/icons-material';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function ChatInput({ chatRef, channelName, channelId }) {
+    const [user] = useAuthState(auth)
 
     const [input, setInput] = useState("");
     const sendMessage = (e) => {
@@ -20,8 +21,8 @@ function ChatInput({ chatRef, channelName, channelId }) {
         db.collection("rooms").doc(channelId).collection("messages").add({
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-            user: "Vinayak",
-            userImage: "",
+            user: user?.displayName,
+            userImage: user?.photoURL,
         });
 
 

@@ -13,7 +13,8 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddIcon from '@mui/icons-material/Add';
 import { useCollection } from 'react-firebase-hooks/firestore';
-import { db } from "../firebase"
+import { auth, db } from "../firebase"
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 
 
@@ -21,6 +22,7 @@ import { db } from "../firebase"
 
 function Sidebar() {
     const [channels] = useCollection(db.collection("rooms"));
+    const [user] = useAuthState(auth)
 
     return (
         <SidebarContainer>
@@ -29,7 +31,7 @@ function Sidebar() {
                     <h2>VJ Space</h2>
                     <h3>
                         <CircleIcon />
-                        Vinayak Jaiswal
+                        {user?.displayName}
                     </h3>
                 </SidebarInfo>
                 <EditIcon />
