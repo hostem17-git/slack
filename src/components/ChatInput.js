@@ -80,23 +80,4 @@ const ChatInputContainer = styled.div`
         
     }
 
-    /* border-radius:20px;
-
-    >form{
-        position:relative;
-        display:flex;
-        justify-content:center;
-    }
-
-    >form>input{
-        position:fixed;
-        bottom:0;
-        width:60%;
-        border:1px solid gray;
-        border-radius:50px;
-        padding:20px;
-        outline:none;
-
-    } */
-
 `

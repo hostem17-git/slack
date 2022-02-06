@@ -5,11 +5,8 @@ import { auth, provider } from '../firebase';
 
 function Login() {
     const handleSignIn = (e) => {
-        console.log("clicked")
         e.preventDefault()
-
         auth.signInWithPopup(provider).catch((error) => alert.message());
-
     }
 
     return <LoginContainer>

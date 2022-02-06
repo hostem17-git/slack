@@ -54,11 +54,6 @@ function Sidebar() {
 
             <SidebarOptions Icon={AddIcon} addChannelOption Title="Add Channel" />
 
-
-
-
-
-
         </SidebarContainer>
     )
 }

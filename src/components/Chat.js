@@ -30,9 +30,6 @@ function Chat() {
         });
     }, [roomId, loading]);
 
-    // console.log(roomDetails?.data())
-    // console.log(roomMessages)
-
 
     return <ChatContainer>
 
